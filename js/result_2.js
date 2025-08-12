@@ -39,30 +39,35 @@ document.addEventListener('DOMContentLoaded', function () {
       type: 'website',
       title: '辦公室佛系擺渡人｜這不是劇，是你每天演的戲',
       description: '你不是在上班，是在修行，別人內鬥你念經，升官不重要，渡化同事才是KPI。',
+      image: window.location.origin + '/result-1.png',
     },
     {
-      url: window.location.origin + '/result#result2',
+      url: window.location.origin + '/images/result#result2',
       type: 'website',
       title: '表面無害型笑面虎｜這不是劇，是你每天演的戲',
       description: '外表人畜無害，死亡筆記本一頁不漏，笑著笑著，就把人送進地獄開會了。',
+      image: window.location.origin + '/result-2.png',
     },
     {
       url: window.location.origin + '/result#result3',
       type: 'website',
       title: '八面玲瓏交際花｜這不是劇，是你每天演的戲',
       description: '你是辦公室裡最亮的星，專業的社交工程師，氣氛組擔當。',
+      image: window.location.origin + '/images/result-3.png',
     },
     {
       url: window.location.origin + '/result#result4',
       type: 'website',
       title: '職場心機老狐狸｜這不是劇，是你每天演的戲',
       description: '你總能在風暴來臨前悄悄閃身，看似低調，實則精明，江湖在走心機要有。',
+      image: window.location.origin + '/images/result-4.png',
     },
     {
       url: window.location.origin + '/result#result5',
       type: 'website',
       title: '職場攻鬥大Boss｜這不是劇，是你每天演的戲',
       description: '職場不是競賽，是你一手導演的生存法則，沒有人能威脅到你。',
+      image: window.location.origin + '/images/result-5.png',
     },
   ];
   const og = ogMetaData[resultIdx];
@@ -79,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setOgMeta('og:type', og.type);
   setOgMeta('og:title', og.title);
   setOgMeta('og:description', og.description);
+  setOgMeta('og:image', og.image);
 
   //- facebook
   document.querySelectorAll("a.btn-fb").forEach(btn => {
