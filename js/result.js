@@ -28,12 +28,41 @@ document.addEventListener('DOMContentLoaded', function () {
     async function writeClipboardText(text) {
         try {
           await navigator.clipboard.writeText(text);
+          Toast.show('已複製連結到剪貼簿！');
         } catch (error) {
           console.error(error.message);
         }
     }
 
 });
+
+class Toast {
+    constructor(message, duration = 3000) {
+        this.message = message;
+        this.duration = duration;
+        this.toastElement = null;
+    }
+    show() {
+        this.toastElement = document.createElement('div');
+        this.toastElement.className = 'toast';
+        this.toastElement.textContent = this.message;
+        document.body.appendChild(this.toastElement);
+
+        setTimeout(() => {
+            this.hide();
+        }, this.duration);
+    }
+    hide() {
+        if (this.toastElement) {
+            this.toastElement.remove();
+            this.toastElement = null;
+        }
+    }
+    static show(message, duration = 3000) {
+        const toast = new Toast(message, duration);
+        toast.show();
+    }
+}
 
 // 離開 result.html 時清除分數
 window.addEventListener('beforeunload', function () {

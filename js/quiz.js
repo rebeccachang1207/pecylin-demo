@@ -42,15 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		// 也可記錄答案文字
 		answers[current] = e.target.textContent.trim();
 		if (current < totalQuestions - 1) {
-			console.log(22222)
 			current++;
 			showQuestion(current);
 		} else {
-			console.log(11111)
 			// 測驗結束，將分數與答案存到 localStorage 並跳轉
 			localStorage.setItem('quizAnswers', JSON.stringify(answers));
 			localStorage.setItem('quizScores', JSON.stringify(scores));
-			console.log({url: getHashIndex(scores) + '.html', scores, answers});
 			window.location.href = getHashIndex(scores) + '.html';
 		}
 	}
