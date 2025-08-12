@@ -27,10 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function writeClipboardText(text) {
         try {
-          await navigator.clipboard.writeText(text);
-          Toast.show('已複製連結到剪貼簿！');
+            await navigator.clipboard.writeText(text);
+            if (!document.querySelector('.toast')) {
+                Toast.show('已複製連結到剪貼簿！');
+            }
         } catch (error) {
-          console.error(error.message);
+            console.error(error.message);
         }
     }
 
