@@ -6,11 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const shareUrl = encodeURIComponent(window.location.href); // 要分享的網址
             const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
 
-            window.open(
-                fbUrl,
-                "fb-share-dialog",
-                "width=800,height=600"
-            );
+            window.open(fbUrl);
         });
     });
 
