@@ -79,6 +79,20 @@ document.addEventListener('DOMContentLoaded', function () {
   setOgMeta('og:type', og.type);
   setOgMeta('og:title', og.title);
   setOgMeta('og:description', og.description);
+
+  //- facebook
+  document.querySelectorAll("a.btn-fb").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const shareUrl = encodeURIComponent(window.location.href); // 要分享的網址
+      const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+
+      window.open(
+        fbUrl,
+        "fb-share-dialog",
+        "width=800,height=600"
+      );
+    });
+  });
 });
 
 // 離開 result.html 時清除分數
