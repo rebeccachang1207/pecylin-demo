@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener("click", () => {
             const shareUrl = encodeURIComponent(window.location.href); // 要分享的網址
             const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-
             window.open(fbUrl);
         });
     });
