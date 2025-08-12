@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //- line
-    document.querySelectorAll("button.btn-shareLink").forEach(btn => {
+    document.querySelectorAll("button.btn-line").forEach(btn => {
         btn.addEventListener("click", () => {
             const shareUrl = encodeURIComponent(window.location.href); // 要分享的網址
             const lineUrl = `https://social-plugins.line.me/lineit/share?url=${shareUrl}`;
@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    //- line
+    //- shareLink
     document.querySelectorAll("button.btn-shareLink").forEach(btn => {
-        writeClipboardText(window.location.href);
+        btn.addEventListener("click", () => {
+            writeClipboardText(window.location.href);
+        });
     });
 
     async function writeClipboardText(text) {
